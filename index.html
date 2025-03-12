@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        (function() {
+            // Extract 'x' parameter from the URL
+            const params = new URLSearchParams(window.location.search);
+            const xValue = params.get("x");
+
+            if (xValue) {
+                // Construct the redirect URL (for more see https://addtoprofile.linkedin.com/)
+                const baseUrl = "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME
+                                &name=I%27m%20Registered%20with
+                                &organizationId=3289782
+                                &issueYear=2025
+                                &issueMonth=1
+                                &expirationYear=2025
+                                &expirationMonth=12
+                                &certUrl=https%3A%2F%2Fwww.gcc-uk.org%2Fsearch%2Fchiro_results%3Fchiro_registration_number%3D";
+
+
+                const redirectUrl = `${baseUrl}${xValue}&certId=${xValue}`;
+
+                // Redirect before the page loads fully
+                window.location.replace(redirectUrl);
+            }
+        })();
+    </script>
+</head>
+<body>
+    <noscript>
+        <p>JavaScript is required for automatic redirection. Please enable it and refresh the page.</p>
+    </noscript>
+</body>
+</html>
